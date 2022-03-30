@@ -6,6 +6,7 @@
     <link href="../css/css.css" rel="stylesheet">
 </head>
 <body>
+<?php include('../inc/header.inc.php'); ?>
 <div id="container">
     <!-- zone de connexion -->
 
