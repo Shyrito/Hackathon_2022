@@ -61,7 +61,7 @@ class Candidatedb{
         $bdd = null;
         try {
             $bdd = DBLink::connect2db(MYDB, $message);
-            $stmt = $bdd->prepare("INSERT INTO `CANDIDATE`(`email`, `firstname`, `lastname`,'phone_number','cv') VALUES (:email,:firstname,:lastname,:phone_number,:cv)");
+            $stmt = $bdd->prepare("INSERT INTO `CANDIDATE`(`email`, `firstname`, `lastname`,`phone_number`,`cv`) VALUES (:email,:firstname,:lastname,:phone_number,:cv)");
 
             $stmt->bindValue(':email', $email);
             $stmt->bindValue(':firstname', $firstname);

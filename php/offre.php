@@ -23,6 +23,11 @@
     include('../inc/db_JOB_OFFER.inc.php');
 
     use Job\Jobbb;
+    include_once('../inc/db_CANDIDATE.inc.php');
+
+    use Candidate\Candidatedb;
+
+
     $id = 2;
     $job=Jobbb::getAllJobWithId($id);
 foreach ($job as $key) {
@@ -41,7 +46,7 @@ foreach ($job as $key) {
 
 
 
-        <form  class = "inscription" action="../domains/inscription.php" method="POST">
+        <form  class = "inscription" action="" method="POST">
 
             <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
@@ -99,6 +104,16 @@ foreach ($job as $key) {
        //     echo "le message a bien été envoyé";
        // }
         echo "le message a bien été envoyé";
+
+
+        $email=htmlentities($_POST['email']);
+        $firstname=htmlentities($_POST['firstName']);
+        $lastname=htmlentities($_POST['name']);
+        $phone_number=htmlentities($_POST['phone']);
+        
+        $cvpath='test';
+
+        $test = Candidatedb::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);
 
     }
     ?>
