@@ -45,7 +45,7 @@
 
 
 
-        <form  class = "inscription" action="" method="POST">
+        <form  class = "inscription" action="../domains/inscription.php" method="POST">
 
             <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
@@ -102,15 +102,7 @@
        // }else{
        //     echo "le message a bien été envoyé";
        // }
-       // echo "le message a bien été envoyé";
-        $email=htmlentities($_POST['email']);
-        $firstname=htmlentities($_POST['firstName']);
-        $lastname=htmlentities($_POST['name']);
-        $phone_number=htmlentities($_POST['phone']);
-        $cvfile=htmlentities($_POST['resume']);
-        $cvpath='test';
-
-        $test = Candidate::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);
+        echo "le message a bien été envoyé";
 
     }
     ?>

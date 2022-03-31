@@ -44,7 +44,7 @@ class Jobbb{
       $bdd = null;
       try {
           $bdd = DBLink::connect2db(MYDB, $message);
-          $result = $bdd->query("SELECT * FROM " . self::TABLE_NAME . "where id_job_offer = '$id' ", PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Job\Job");
+          $result = $bdd->query("SELECT * FROM " . self::TABLE_NAME . "where id_job_offer = '$id' ", PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "USERS\USERS");
       } catch (Exception $e) {
           $message .= $e->getMessage() . '<br>';
       }

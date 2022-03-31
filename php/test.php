@@ -1,16 +1,3 @@
-<?php
-
-
-
-include('../inc/db_CANDIDATE.inc.php');
-
-use USERS\Candidate;
-$email = "jadotjean@gmail.com";
-$test=Candidate::getAllMail($email);
-foreach ($test as $key) {
-  echo "<p>$key->email</p>";
-}
-?>
 
 
 
@@ -21,11 +8,12 @@ foreach ($test as $key) {
 include('../inc/db_JOB_OFFER.inc.php');
 
 use Job\Jobbb;
-$id = 1;
-$test=Jobbb::getAllJob($id);
+$id = 2;
+$test=Jobbb::getAllJobWithId($id);
 foreach ($test as $key) {
-  echo "<p>$key->title</p>";
+echo "<p>$key->title</p>";
 }
+
 ?>
 
 <?php
