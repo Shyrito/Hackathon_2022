@@ -5,12 +5,18 @@
 
 
 
-include('../inc/db_JOB_OFFER.inc.php');
+include ('../inc/db_USERS.inc.php');
+use Users\Usersdb;
 
-use Job\Jobbb;
-$id = 2;
-$test=Jobbb::getAllJobCount();
-echo "<p>$test</p>";
+$test = Usersdb::getAllCandidateWithEmail("a");
+
+foreach ($test as $key){
+
+
+    echo $key->id_users;
+}
+
+
 
 
 ?>

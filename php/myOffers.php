@@ -7,9 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/css.css" rel="stylesheet">
+    <link href="../css/css.css" rel="stylesheet">
     <title>Deloitte</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.jpg">
+    <link rel="icon" type="image/x-icon" href="..//img/favicon.jpg">
 
 </head>
 <header>
@@ -36,15 +36,23 @@
 <body>
 <div class = "all-job">
     <?php
+    session_start();
+
+
+
+
+
 
     include('../inc/db_JOB_OFFER.inc.php');
 
     use Job\Jobbb;
     
-    session_start();
-    $test=Jobbb::getAllJob();
+
+    $test=Jobbb::getAllJobWithId($_SESSION['idUsers']);
+
     foreach ($test as $key) {
-        if($key->fk_user =   $_SESSION['idUsers'] ) {
+
+
             echo "<a class = 'job-title' href = 'offre.php?id=$key->id_job_offer'> ";
             echo "<div class='job'>";
             echo "<h2>$key->title</h2>";
@@ -53,7 +61,7 @@
             echo "<p>$key->description</p>";
             echo "</div>";
             echo "</a>";
-        }
+
     }
     ?>
 </div>
