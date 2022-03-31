@@ -35,7 +35,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
             $_SESSION['username'] = $email;
             $_SESSION['idUsers'] = $idUser;
 
-            header('Location: principale.php');
+            header('Location: mainpage.php');
         }
         else
         {
@@ -49,7 +49,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 }
 else
 {
-    header('Location: mainPage.php');
+    header('Location: connexion.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>
