@@ -10,6 +10,8 @@
 <div id="container">
     <!-- zone de connexion -->
 
+
+
     <form action="verification.php" method="POST">
         <h1>CONNECTION</h1>
 
