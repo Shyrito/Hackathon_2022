@@ -55,6 +55,67 @@ class Jobbb{
       return $result;
     }
 
+    public function insertJobOffer($title,$description,$challenges,$skills,$startDate,$idUser,$ContractType,$Duration,$Status)
+    {
+
+
+
+        $noError = false;
+        $bdd = null;
+        try {
+            $bdd = DBLink::connect2db(MYDB, $message);
+            $stmt = $bdd->prepare("INSERT INTO `JOB_OFFER`(`title`, `desciption`, `challenges`,`skills`,`job_start`,`contract_type`,`status`,`fk_users`) VALUES (:title,:description,:challenges,:skills,:cv,:startDate,:Status,:idUser");
+
+            $stmt->bindValue(':title', $title);
+            $stmt->bindValue(':description', $description);
+            $stmt->bindValue(':challenges', $challenges);
+            $stmt->bindValue(':skills', $skills);
+            $stmt->bindValue(':startDate', $startDate);
+            $stmt->bindValue(':idUser', $idUser);
+            $stmt->bindValue(':ContractType', $ContractType);
+            $stmt->bindValue(':Duration', $Duration);
+            $stmt->bindValue(':Status', $Status);
+
+
+            if ($stmt->execute()) {
+                $message .= "";
+                $noError = true;
+
+            } else {
+                $message .= 'Une erreur système est survenue.<br>
+                    Veuillez essayer à nouveau plus tard ou contactez l\'administrateur du site.
+                    (Code erreur: ' . $stmt->errorCode() . ')<br>';
+            }
+            $stmt = null;
+        } catch (Exception $e) {
+            $message .= $e->getMessage() . '<br>';
+        }
+        DBLink::disconnect($bdd);
+        return $noError;
+    }
+    public function getAllJobCount()
+    {
+
+
+        $bdd = null;
+
+        $bdd = DBLink::connect2db(MYDB, $message);
+        $reponse = $bdd->query("SELECT count(*) AS count FROM JOB_OFFER ");
+
+
+
+        while ($donnees = $reponse->fetch())
+
+        {
+
+            $value= $donnees['count'];
+
+        }
+
+        $reponse->closeCursor();
+        return $value;
+    }
+
 
 
 
