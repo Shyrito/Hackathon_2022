@@ -40,7 +40,8 @@
     include('../inc/db_JOB_OFFER.inc.php');
 
     use Job\Jobbb;
-
+    
+    session_start();
     $test=Jobbb::getAllJob();
     foreach ($test as $key) {
         if($key->fk_user =   $_SESSION['idUsers'] ) {
