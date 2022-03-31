@@ -46,7 +46,16 @@ article:hover{
     margin:0 auto;
     margin-top:10%;
 }
-
+#goTO{
+    background-color: #86bc24;
+    border-radius: 15pt;
+    margin: 5px 15px;
+    padding: 3px 10px;
+    color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
 form {
     width:100%;
     padding: 30px;

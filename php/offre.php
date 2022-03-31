@@ -14,7 +14,7 @@
 <body>
 <main id="offre">
     <h1>Job offer</h1>
-   // <?
+     <?
    // include("Mail.php") ;
    // use Hackathon\Mail;
    // ?>
@@ -27,9 +27,12 @@
     $job=Jobbb::getAllJobWithId($id);
 foreach ($job as $key) {
     echo "<h2>$key->title</h2>";
+    echo "<a id=\"goTO\" href=\"#middle\">Apply now</a>";
+    echo "<p id='offreSkills' >$key->skills</p>";
     echo "<p>$key->job_start</p>";
     echo "<p>$key->challenges</p>";
     echo "<p>$key->description</p>";
+
 }
 ?>
     <h2>Name</h2>
@@ -40,8 +43,7 @@ foreach ($job as $key) {
         <h2>Start your application</h2>
 
 
-
-        <form  class = "inscription" action="../domains/inscription.php" method="POST">
+        <form id="middle" class = "inscription" action="../domains/inscription.php" method="POST">
 
             <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
@@ -99,6 +101,14 @@ foreach ($job as $key) {
        //     echo "le message a bien été envoyé";
        // }
         echo "le message a bien été envoyé";
+        $email=htmlentities($_POST['email']);
+        $firstname=htmlentities($_POST['firstName']);
+        $lastname=htmlentities($_POST['name']);
+        $phone_number=htmlentities($_POST['phone']);
+        $cvfile=htmlentities($_POST['resume']);
+        $cvpath='test';
+
+        $test = Candidate::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);
 
     }
     ?>

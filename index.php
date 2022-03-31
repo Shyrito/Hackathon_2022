@@ -52,6 +52,7 @@ foreach ($test as $key) {
     echo "<p>$key->job_start</p>";
     echo "<p>$key->challenges</p>";
     echo "<p>$key->description</p>";
+
 }
 ?>
 
