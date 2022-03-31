@@ -1,5 +1,5 @@
 
-<a class="logo" href="index.php"><img src="../Hackathon_2022/img/Deloitte-logo-750x375.png" alt="Accueil"></a>
+<a class="logo" href="index.php"><img src="../img/Deloitte-logo-750x375.png" alt="Accueil"></a>
 
     <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="nav bar">
         <div class="container-fluid">
