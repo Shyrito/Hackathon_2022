@@ -27,14 +27,25 @@
             <label for="Description">What is the description of the offer ?</label><textarea id="Description" name="Description" rows="3" cols="40"  placeholder="What is the description of the offer ?"></textarea>    <br>
             <label for="Challenges">What are the challenges ?</label><textarea id="Challenges" name="Challenges" rows="3" cols="40"  placeholder="What are the challenges ?"></textarea>    <br>
             <label for="Skills">Which skills are required ?</label><textarea id="Skills" rows="3" cols="40" name="Skills" type="text" placeholder="Which skills are required ?"  ></textarea><br>
-            <label for="StartDate">When does the contract start ?</label> <input id="StartDate" name="StartDate" type="date" value="2017-06-01">
+            <label for="StartDate">When does the contract start ?</label> <input id="StartDate" name="StartDate" type="date" value="2017-06-01"><br>
 
-            <label for="ContractType">Contract type</label><br>
+            <label for="ContractType">Contract type</label>
             <select id="ContractType" name="ContractType">
                 <option selected>Make your choice</option>
                 <option>CDI</option>
                 <option>CDD</option>
                 <option>Internship</option>
+            </select> <br>
+
+            <label for="Duration">Duration of the meeting</label>
+            <select id="Duration" name="Duration">
+                <option selected>Make your choice</option>
+                <option value="30">30min</option>
+                <option value="60">1h</option>
+                <option value="90">1h30</option>
+                <option value="120">2h</option>
+                <option value="150">2h30</option>
+                <option value="180">3h</option>
             </select> <br>
 
             <label for="Status">Status</label>
@@ -43,7 +54,7 @@
                 <option>Published</option>
                 <option>Unpublished</option>
             </select> <br>
-            <input type="submit" name="submit" value="Send">
+            <input type="submit" name="submit" value="Save">
         </form>
         <?php
     }else{
