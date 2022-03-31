@@ -40,19 +40,19 @@
     include('../inc/db_JOB_OFFER.inc.php');
 
     use Job\Jobbb;
-   // $_SESSION['idUsers'] =
+
     $test=Jobbb::getAllJob();
     foreach ($test as $key) {
-        echo "<a class = 'job-title' href = 'offre.php?id=$key->id_job_offer'> ";
-        echo "<div class='job'>";
-        echo "<h2>$key->title</h2>";
-        echo "<p>$key->job_start</p>";
-        echo "<p>$key->challenges</p>";
-        echo "<p>$key->description</p>";
-        echo "</div>";
-        echo "</a>";
-
-
+        if($key->fk_user =   $_SESSION['idUsers'] ) {
+            echo "<a class = 'job-title' href = 'offre.php?id=$key->id_job_offer'> ";
+            echo "<div class='job'>";
+            echo "<h2>$key->title</h2>";
+            echo "<p>$key->job_start</p>";
+            echo "<p>$key->challenges</p>";
+            echo "<p>$key->description</p>";
+            echo "</div>";
+            echo "</a>";
+        }
     }
     ?>
 </div>
