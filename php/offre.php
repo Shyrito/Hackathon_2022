@@ -18,24 +18,20 @@
    // include("Mail.php") ;
    // use Hackathon\Mail;
    // ?>
-
-
-
-
-
     <?php
 
     include('../inc/db_JOB_OFFER.inc.php');
 
     use Job\Jobbb;
     $id = 2;
-    $key=Jobbb::getAllJobWithId($id);
-
-        echo "<h2>$key->title</h2>";
-        echo "<p>$key->job_start</p>";
-        echo "<p>$key->challenges</p>";
-        echo "<p>$key->description</p>";
-    ?>
+    $job=Jobbb::getAllJobWithId($id);
+foreach ($job as $key) {
+    echo "<h2>$key->title</h2>";
+    echo "<p>$key->job_start</p>";
+    echo "<p>$key->challenges</p>";
+    echo "<p>$key->description</p>";
+}
+?>
     <h2>Name</h2>
 
     <?php

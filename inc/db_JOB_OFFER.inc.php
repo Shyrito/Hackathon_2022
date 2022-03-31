@@ -13,7 +13,10 @@ use PDO;
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 class Job
 {
-
+public $title ;
+public $job_start ;
+public $challenges ;
+public $description;
 }
 class Jobbb{
 
@@ -44,7 +47,7 @@ class Jobbb{
       $bdd = null;
       try {
           $bdd = DBLink::connect2db(MYDB, $message);
-          $result = $bdd->query("SELECT * FROM " . self::TABLE_NAME . "where id_job_offer = '$id' ", PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "USERS\USERS");
+          $result = $bdd->query("SELECT * FROM " . self::TABLE_NAME . " where id_job_offer = '$id' ", PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Job\Job");
       } catch (Exception $e) {
           $message .= $e->getMessage() . '<br>';
       }
