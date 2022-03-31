@@ -32,9 +32,9 @@
 
             echo "<div class='job'>";
             echo "<h2>$key->title</h2>";
-            echo "<p>$key->job_start</p>";
-            echo "<p>$key->challenges</p>";
-            echo "<p>$key->description</p>";
+            echo "<p class = \"date\">$key->job_start</p>";
+            echo "<p class = \"challenge\">$key->challenges</p>";
+            echo "<p class = \"desc\">$key->description</p>";
             echo "</div>";
             echo "</a>";
 
