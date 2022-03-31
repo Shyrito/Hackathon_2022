@@ -14,48 +14,17 @@
 <body>
 <main id="offre">
     <h1>Job offer</h1>
-     <?
-   // include("Mail.php") ;
-   // use Hackathon\Mail;
-   // ?>
-    <?php
-
-    include('../inc/db_JOB_OFFER.inc.php');
-
-    use Job\Jobbb;
-    $id = 2;
-    $job=Jobbb::getAllJobWithId($id);
-foreach ($job as $key) {
-    echo "<h2>$key->title</h2>";
-    echo "<a id=\"goTO\" href=\"#middle\">Apply now</a>";
-
-    echo "<article>";
-    echo "<p>$key->job_start</p>";
-    echo "</article>";
-    echo "<article>";
-    echo "<p>Challenges</p>";
-    echo "<p>$key->challenges</p>";
-    echo "</article>";
-    echo "<article>";
-    echo "<p>Description</p>";
-    echo "<p>$key->description</p>";
-    echo "</article>";
-    echo "<article>";
-    echo "<p>Contract type</p>";
-    echo "<p>$key->contract_type</p>";
-    echo "</article>";
-
-}
-?>
-    <h2>Name</h2>
-
+    <?
+    include("Mail.php") ;
+    use Hackathon\Mail;
+    ?>
     <?php
     if(!isset($_POST['submit'])){
         ?>
+
         <h2>Start your application</h2>
 
-
-        <form id="middle" class = "inscription" action="../domains/inscription.php" method="POST">
+        <form  class = "inscription" action="" method="POST">
 
             <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
@@ -96,7 +65,7 @@ foreach ($job as $key) {
                 <input type="checkbox" id="consent" name="consent">
                 <label id="consent" for="consent">I give Deloitte permission to keep my data for 1 year after completion of my application process. *</label>
             </div>
-            <input type="submit" name="submit" value="Send">
+            <input type="submit" name="submit">
             <p>* You can always request for your personal information to be deleted; read the <a href="https://careersatdeloitte.com/privacy">privacy statement</a> for more information.</p>
         </form>
         <?php
@@ -104,26 +73,17 @@ foreach ($job as $key) {
         $emailToSend = htmlentities($_POST['email']);
         $sujet = "Offre Deloitte";// htmlentities($_POST['Sujet']);
         $content ="Vous avez postulé pour une offre";
-       // $mail = new Mail();
-       // $m = "";
-       // $mail::envoyerMail($emailToSend,$sujet,$content,$m);
-       // if(strlen($m)>1){
-       //     echo $m;
-       // }else{
-       //     echo "le message a bien été envoyé";
-       // }
-        echo "le message a bien été envoyé";
-        $email=htmlentities($_POST['email']);
-        $firstname=htmlentities($_POST['firstName']);
-        $lastname=htmlentities($_POST['name']);
-        $phone_number=htmlentities($_POST['phone']);
-        $cvfile=htmlentities($_POST['resume']);
-        $cvpath='test';
-
-        $test = Candidate::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);
-
+        $mail = new Mail();
+        $m = "";
+        $mail::envoyerMail($emailToSend,$sujet,$content,$m);
+        if(strlen($m)>1){
+            echo $m;
+        }else{
+            echo "le message a bien été envoyé";
+        }
     }
     ?>
 </main>
+
 </body>
 </html>
