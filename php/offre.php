@@ -1,28 +1,32 @@
-<?php
-$titre = 'Inscription';
-include("inc/headerDeconnecte.inc.php");
-use Facetube\Compte;
-$compte = new Compte();
-?>
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/css.css" rel="stylesheet">
+    <title>Deloitte</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.jpg">
+</head>
+<body>
+<main id="offre">
     <h1>Job offer</h1>
-
-
-
-
-
-
-
-
-
+    <?
+    include("Mail.php") ;
+    use Hackathon\Mail;
+    ?>
     <?php
     if(!isset($_POST['submit'])){
         ?>
 
         <h2>Start your application</h2>
-        <h3>Your data</h3>
 
         <form  class = "inscription" action="" method="POST">
+
+            <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
             <label for="firstName">First name (*)</label><input id="firstName" name="firstName" type="text" required  autofocus><br>
             <label for="name">Last name(*)</label><input id="name" name="name" type="text" required  ><br>
@@ -58,31 +62,28 @@ $compte = new Compte();
             <input id="coverletter" type="file" accept=".pdf, .doc, .docx, .pptx">
 
             <div>
-            <input type="checkbox" id="consent" name="consent">
-            <label for="consent">I give Deloitte permission to keep my data for 1 year after completion of my application process. *</label>
+                <input type="checkbox" id="consent" name="consent">
+                <label id="consent" for="consent">I give Deloitte permission to keep my data for 1 year after completion of my application process. *</label>
             </div>
-
             <input type="submit" name="submit">
-
             <p>* You can always request for your personal information to be deleted; read the <a href="https://careersatdeloitte.com/privacy">privacy statement</a> for more information.</p>
-
         </form>
         <?php
     }else{
-        $emailClient = htmlentities($_POST['Emeteur']);
-        $sujet = htmlentities($_POST['Sujet']);
-        $raison = isset($_POST['raison']) ? htmlentities($_POST['raison']):"Pas de raison spécifiée.(bizzarement)" ;
-        $content = htmlentities($_POST['Message']);
+        $emailToSend = htmlentities($_POST['email']);
+        $sujet = "Offre Deloitte";// htmlentities($_POST['Sujet']);
+        $content ="Vous avez postulé pour une offre";
         $mail = new Mail();
-        $mail->envoyerMailUniversel($emailClient,$sujet,$raison,$content,$m);
-
-        if (strlen($m) > 1) {
-            echo "<span class='msgToEcho'>$m</span>";
+        $m = "";
+        $mail::envoyerMail($emailToSend,$sujet,$content,$m);
+        if(strlen($m)>1){
+            echo $m;
+        }else{
+            echo "le message a bien été envoyé";
         }
-
     }
     ?>
 </main>
-<?php
-include("inc/footer.inc.php");
-?>
+
+</body>
+</html>
