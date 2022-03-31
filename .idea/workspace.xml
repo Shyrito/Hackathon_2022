@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa242226-6fe5-49e6-8bfa-48d0db14eb1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/php/selectable.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/selectable.php" afterDir="false" />
-    </list>
+    <list default="true" id="fa242226-6fe5-49e6-8bfa-48d0db14eb1c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +59,7 @@
       <updated>1648731209714</updated>
       <workItem from="1648731211160" duration="1667000" />
       <workItem from="1648732943052" duration="3226000" />
+      <workItem from="1648736624192" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="Calender implementation">
       <created>1648733034325</created>
@@ -69,7 +68,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648733034325</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="correction du calendar">
+      <created>1648736766268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648736766268</updated>
+    </task>
+    <task id="LOCAL-00003" summary="correction du calendar">
+      <created>1648736957069</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648736957069</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Calender implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Calender implementation" />
+    <MESSAGE value="correction du calendar" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction du calendar" />
   </component>
 </project>
