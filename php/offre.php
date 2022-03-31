@@ -28,7 +28,7 @@
     use Candidate\Candidatedb;
 
 
-    $id = 2;
+    $id=$_GET['id'];
     $job=Jobbb::getAllJobWithId($id);
 foreach ($job as $key) {
     echo "<h2>$key->title</h2>";
@@ -110,7 +110,7 @@ foreach ($job as $key) {
         $firstname=htmlentities($_POST['firstName']);
         $lastname=htmlentities($_POST['name']);
         $phone_number=htmlentities($_POST['phone']);
-        
+
         $cvpath='test';
 
         $test = Candidatedb::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);

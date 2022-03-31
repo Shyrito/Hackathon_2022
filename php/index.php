@@ -14,38 +14,35 @@
 </head>
 <header>
     <?php
-    include('inc/header.inc.php');
+    include('../inc/header.inc.php');
     ?>
 </header>
 <body>
-<?php
 
-include('inc/db_JOB_OFFER.inc.php');
+<div class = "all-job">
+    <?php
 
-use Job\Jobbb;
-$id = 1;
-$test=Jobbb::getAllJob();
-foreach ($test as $key) {
+    include('../inc/db_JOB_OFFER.inc.php');
 
-    echo "<h2>$key->title</h2>";
-    echo "<p>$key->job_start</p>";
-    echo "<p>$key->challenges</p>";
-    echo "<p>$key->description</p>";
-}
-?>
+    use Job\Jobbb;
 
-<h1>Ceci est un titre</h1>
+    $test=Jobbb::getAllJob();
+    foreach ($test as $key) {
+            echo "<a class = 'job-title' href = 'offre.php?id=$key->id_job_offer'> ";
 
-<section class="projethonneur">
-    <article class="projet">
-        <a class = "job-title" href = "php/default.php"> Ceci est le titre du job </a>
-        <p>Ceci est la description du job</p>
+            echo "<div>";
+            echo "<h2>$key->title</h2>";
+            echo "<p>$key->job_start</p>";
+            echo "<p>$key->challenges</p>";
+            echo "<p>$key->description</p>";
+            echo "</div>";
+            echo "</a>";
 
-    </article>
-</section>
-<div>
 
+        }
+    ?>
 </div>
+
 
 <!-- Optional JavaScript; choose one of the two! -->
 
