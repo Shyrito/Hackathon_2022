@@ -28,10 +28,22 @@
 foreach ($job as $key) {
     echo "<h2>$key->title</h2>";
     echo "<a id=\"goTO\" href=\"#middle\">Apply now</a>";
-    echo "<p id='offreSkills' >$key->skills</p>";
+
+    echo "<article>";
     echo "<p>$key->job_start</p>";
+    echo "</article>";
+    echo "<article>";
+    echo "<p>Challenges</p>";
     echo "<p>$key->challenges</p>";
+    echo "</article>";
+    echo "<article>";
+    echo "<p>Description</p>";
     echo "<p>$key->description</p>";
+    echo "</article>";
+    echo "<article>";
+    echo "<p>Contract type</p>";
+    echo "<p>$key->contract_type</p>";
+    echo "</article>";
 
 }
 ?>
