@@ -18,13 +18,15 @@
     ?>
 </header>
 <body>
-
+<?php
+    include ('../inc/db_JOB_OFFER.inc.php');
+    use Job\Jobbb;
+    $count = Jobbb::getAllJobCount();
+    echo "<h2 class = \"count\" >$count vacancies found</h2>";
+    ?>
+<h2></h2>
 <div class = "all-job">
     <?php
-
-    include('../inc/db_JOB_OFFER.inc.php');
-
-    use Job\Jobbb;
 
     $test=Jobbb::getAllJob();
     foreach ($test as $key) {
