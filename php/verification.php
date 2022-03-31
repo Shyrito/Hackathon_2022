@@ -17,14 +17,24 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
     if($email !== "" && $password !== "")
     {
-        $requete = "SELECT count(*) FROM USERS where 
-              email = '".$email."' and password = '".$password."' ";
+        $requete = "SELECT count(*) FROM USERS where email = '".$email."' and password = '".$password."' ";
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
+
+
+
+        $requeteGetId = "SELECT id_users FROM USERS where email = $email and  email = '".$email."' and password = '".$password."' ";
+        $exec_requeteGetId = mysqli_query($db,$requete);
+        $reponseGetId      = mysqli_fetch_array($exec_requete);
+        $idUser = $reponse['id_users'];
+
+
         if($count!=0) // nom d'utilisateur et mot de passe correctes
         {
             $_SESSION['username'] = $email;
+            $_SESSION['idUsers'] = $idUser;
+
             header('Location: principale.php');
         }
         else

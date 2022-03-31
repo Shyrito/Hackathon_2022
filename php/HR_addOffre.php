@@ -37,6 +37,17 @@
                 <option>Internship</option>
             </select> <br>
 
+            <label for="Duration">Duration of the meeting</label>
+            <select id="Duration" name="Duration">
+                <option selected>Make your choice</option>
+                <option value="30">30min</option>
+                <option value="60">1h</option>
+                <option value="90">1h30</option>
+                <option value="120">2h</option>
+                <option value="150">2h30</option>
+                <option value="180">3h</option>
+            </select> <br>
+
             <label for="Status">Status</label>
             <select id="Status" name="Status">
                 <option selected>Draft</option>
@@ -59,14 +70,20 @@
         //     echo "le message a bien été envoyé";
         // }
         echo "le message a bien été envoyé";
-        $email=htmlentities($_POST['email']);
-        $firstname=htmlentities($_POST['firstName']);
-        $lastname=htmlentities($_POST['name']);
-        $phone_number=htmlentities($_POST['phone']);
-        $cvfile=htmlentities($_POST['resume']);
-        $cvpath='test';
 
-        $test = Candidate::insertCandidate($email,$firstname,$lastname,$phone_number,$cvpath);
+        $title=htmlentities($_POST['Title']);
+        $description=htmlentities($_POST['Description']);
+        $challenges=htmlentities($_POST['Challenges']);
+        $skills=htmlentities($_POST['Skills']);
+        $startDate=htmlentities($_POST['StartDate']);
+        $ContractType=htmlentities($_POST['ContractType']);
+        session_start();
+        $idUser = $_SESSION['idUsers'];
+        $Duration=htmlentities($_POST['Duration']);
+        $Status= htmlentities($_POST['Status']);
+
+
+        $test = Candidatedb::insertJobOffer($title,$description,$challenges,$skills,$startDate,$idUser,$ContractType,$Duration,$Status);
 
     }
     ?>
