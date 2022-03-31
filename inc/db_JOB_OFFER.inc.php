@@ -39,6 +39,20 @@ class Jobbb{
       DBLink::disconnect($bdd);
       return $result;
     }
+    public function getAllJobPublic()
+    {
+        $result = array();
+
+        $bdd = null;
+        try {
+            $bdd = DBLink::connect2db(MYDB, $message);
+            $result = $bdd->query("SELECT * FROM " . self::TABLE_NAME . " where status = 'Published' ", PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Job\Job");
+        } catch (Exception $e) {
+            $message .= $e->getMessage() . '<br>';
+        }
+        DBLink::disconnect($bdd);
+        return $result;
+    }
 
     public function getAllJobWithId($id)
     {
@@ -100,7 +114,7 @@ class Jobbb{
         $bdd = null;
 
         $bdd = DBLink::connect2db(MYDB, $message);
-        $reponse = $bdd->query("SELECT count(*) AS count FROM JOB_OFFER ");
+        $reponse = $bdd->query("SELECT count(*) AS count FROM JOB_OFFER where  status = 'Published'");
 
 
 

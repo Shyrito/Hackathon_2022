@@ -28,7 +28,7 @@
 <div class = "all-job">
     <?php
 
-    $test=Jobbb::getAllJob();
+    $test=Jobbb::getAllJobPublic();
     foreach ($test as $key) {
             echo "<a class = 'job-title' href = 'offre.php?id=$key->id_job_offer'> ";
 

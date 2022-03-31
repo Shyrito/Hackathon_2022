@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa242226-6fe5-49e6-8bfa-48d0db14eb1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/inc/db_MEETING_SLOT.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/db_JOB_OFFER.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/db_JOB_OFFER.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/FormulaireAddDispo.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/FormulaireAddDispo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/selectable.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/selectable.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +70,7 @@
       <workItem from="1648731211160" duration="1667000" />
       <workItem from="1648732943052" duration="3226000" />
       <workItem from="1648736624192" duration="336000" />
-      <workItem from="1648756310634" duration="1212000" />
+      <workItem from="1648754827228" duration="5774000" />
     </task>
     <task id="LOCAL-00001" summary="Calender implementation">
       <created>1648733034325</created>
