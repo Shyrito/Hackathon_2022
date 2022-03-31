@@ -39,7 +39,21 @@
     </nav>
 </header>
 <body>
+<?php
 
+include('inc/db_JOB_OFFER.inc.php');
+
+use Job\Jobbb;
+$id = 1;
+$test=Jobbb::getAllJob();
+foreach ($test as $key) {
+
+    echo "<h2>$key->title</h2>";
+    echo "<p>$key->job_start</p>";
+    echo "<p>$key->challenges</p>";
+    echo "<p>$key->description</p>";
+}
+?>
 
 <h1>Ceci est un titre</h1>
 

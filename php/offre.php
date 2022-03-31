@@ -14,17 +14,38 @@
 <body>
 <main id="offre">
     <h1>Job offer</h1>
-    <?
-    include("Mail.php") ;
-    use Hackathon\Mail;
+   // <?
+   // include("Mail.php") ;
+   // use Hackathon\Mail;
+   // ?>
+
+
+
+
+
+    <?php
+
+    include('../inc/db_JOB_OFFER.inc.php');
+
+    use Job\Jobbb;
+    $id = 2;
+    $key=Jobbb::getAllJobWithId($id);
+
+        echo "<h2>$key->title</h2>";
+        echo "<p>$key->job_start</p>";
+        echo "<p>$key->challenges</p>";
+        echo "<p>$key->description</p>";
     ?>
+    <h2>Name</h2>
+
     <?php
     if(!isset($_POST['submit'])){
         ?>
-
         <h2>Start your application</h2>
 
-        <form  class = "inscription" action="" method="POST">
+
+
+        <form  class = "inscription" action="../domains/inscription.php" method="POST">
 
             <h3>Your data</h3>
             <!--  <p> Pour toutes information complémentaires, n'hésitez pas à joindre le propriétaire du site via cette adresse :proprio@gmail.com </p><br> -->
@@ -73,17 +94,18 @@
         $emailToSend = htmlentities($_POST['email']);
         $sujet = "Offre Deloitte";// htmlentities($_POST['Sujet']);
         $content ="Vous avez postulé pour une offre";
-        $mail = new Mail();
-        $m = "";
-        $mail::envoyerMail($emailToSend,$sujet,$content,$m);
-        if(strlen($m)>1){
-            echo $m;
-        }else{
-            echo "le message a bien été envoyé";
-        }
+       // $mail = new Mail();
+       // $m = "";
+       // $mail::envoyerMail($emailToSend,$sujet,$content,$m);
+       // if(strlen($m)>1){
+       //     echo $m;
+       // }else{
+       //     echo "le message a bien été envoyé";
+       // }
+        echo "le message a bien été envoyé";
+
     }
     ?>
 </main>
-
 </body>
 </html>
