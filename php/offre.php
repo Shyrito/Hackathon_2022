@@ -96,7 +96,7 @@ foreach ($job as $key) {
                 <input type="checkbox" id="consent" name="consent">
                 <label id="consent" for="consent">I give Deloitte permission to keep my data for 1 year after completion of my application process. *</label>
             </div>
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" value="Send">
             <p>* You can always request for your personal information to be deleted; read the <a href="https://careersatdeloitte.com/privacy">privacy statement</a> for more information.</p>
         </form>
         <?php
