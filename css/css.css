@@ -1,16 +1,9 @@
 /*theme : couleur fond secondaire  --> #DDEFE8
           couleur bouton --> #86BC24
  */
-
-header{
-    background-color: white;
-
-}
-body{
-    background-color: white;
-}
-#home-button{
-    padding: 5%;
+img{
+    width: 20%;
+    margin-left: 2%;
 }
 h1{
     margin-top: 1%;
@@ -22,14 +15,41 @@ h1{
 article{
     margin-top: 5%;
     width: 60%;
+    margin: auto;
+    padding: 2%;
+    background-color: white;
+}
+
+.job {
+    margin: 2%;
+    padding: 2%;
+    border: 2px solid #86BC24;
+    border-radius: 25px;
     background-color: #DDEFE8;
 }
-article:hover{
-    background-color: #86BC24;
+.date{
+    text-align: center;
+    color: red;
+}
+/*make text overflow into "..."*/
+.challenge{
+    overflow: hidden;   /*ensure text is not hidden*/
+    text-overflow: ellipsis; /*add ellipses*/
+    display: -webkit-box; /*use this to make it work in iOS*/
+    -webkit-line-clamp: 2; /*only show 2 lines*/
+    -webkit-box-orient: vertical; /*make it vertical*/
+}
+.desc{
+    color: orange;
 }
 .job-title{
-    color: black;
+
     text-decoration: none;
+    color: black;
+}
+.job-title:hover{
+    text-decoration: none;
+    color: black;
 }
 .linked-item__meta{
     display: block;
@@ -42,21 +62,29 @@ article:hover{
     margin-top:10%;
 }
 
-form {
-    width:100%;
+form{
+    width:55%;
+    margin:0 auto;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #DDEFE8;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 #container h1{
     width: 76%;
     margin: 0 auto;
     padding-bottom: 10px;
 }
 
+.tst2{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+}
 
-input[type=text], input[type=password] {
+middle, input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -64,14 +92,22 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+.tst{
+    width: auto;
+    padding: 0;
+    margin-right: 0;
+    display: inline-block;
+    border-radius: 5px;
+}
+
 
 
 input[type=submit] {
     background-color: #86BC24;
     color: white;
-    padding: 14px 20px;
+    border: 1px solid #53af57;
+    padding: 12px 20px;
     margin: 8px 0;
-    border: none;
     cursor: pointer;
     width: 100%;
 }

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include ('../inc/db_USERS.inc.php');
+use Users\Usersdb;
 if(isset($_POST['username']) && isset($_POST['password']))
 {
     // connexion à la base de données
@@ -17,15 +19,27 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
     if($email !== "" && $password !== "")
     {
-        $requete = "SELECT count(*) FROM USERS where 
-              email = '".$email."' and password = '".$password."' ";
+        $requete = "SELECT count(*) FROM USERS where email = '".$email."' and password = '".$password."' ";
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
+
+
+
+
+
+
         if($count!=0) // nom d'utilisateur et mot de passe correctes
         {
             $_SESSION['username'] = $email;
-            header('Location: principale.php');
+            $idUser=Usersdb::getAllCandidateWithEmail($email);
+            foreach ($idUser as $key){
+
+                $_SESSION['idUsers'] = $key->id_users;
+
+            }
+
+            header('Location: mainPage.php');
         }
         else
         {

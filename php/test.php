@@ -5,14 +5,19 @@
 
 
 
-include('../inc/db_JOB_OFFER.inc.php');
+include ('../inc/db_USERS.inc.php');
+use Users\Usersdb;
 
-use Job\Jobbb;
-$id = 2;
-$test=Jobbb::getAllJobWithId($id);
-foreach ($test as $key) {
-echo "<p>$key->title</p>";
+$test = Usersdb::getAllCandidateWithEmail("a");
+
+foreach ($test as $key){
+
+
+    echo $key->id_users;
 }
+
+
+
 
 ?>
 
@@ -21,6 +26,4 @@ echo "<p>$key->title</p>";
 include('../inc/db_CANDIDATE.inc.php');
 
 use Candidate\Candidatedb;
-
-
 ?>
