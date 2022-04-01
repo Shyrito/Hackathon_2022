@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fa242226-6fe5-49e6-8bfa-48d0db14eb1c" name="Changes" comment="correction du calendar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/db_APPLICATION.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/db_APPLICATION.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/offerValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/offerValidate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +14,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/PHPMailer-master/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="master" />
@@ -44,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../xampp/htdocs/Hackathon_2022" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -68,6 +73,7 @@
       <workItem from="1648754827228" duration="5774000" />
       <workItem from="1648762835090" duration="18000" />
       <workItem from="1648768619389" duration="104000" />
+      <workItem from="1648783107322" duration="6949000" />
     </task>
     <task id="LOCAL-00001" summary="Calender implementation">
       <created>1648733034325</created>

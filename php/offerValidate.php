@@ -63,9 +63,87 @@
     if(!isset($_POST['submit'])){
         ?>
         <h2>Validate the candidates</h2>
+
+        <form action="offerValidate.php" method="POST">
+            <fieldset>
+                <legend>Gender</legend>
+                <ul class="filter">
+                    <li>
+                        <input type="radio" name="choiceGender" value="m"/>
+                        <label for="reponse-1">Male</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="choiceGender" value="f" />
+                        <label for="reponse-2">Women</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="choiceGender" value="x" />
+                        <label for="reponse-3">Other</label>
+                    </li>
+
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Grade</legend>
+                <ul class="filter">
+                    <li>
+                        <input type="radio" name="choiceGrade" value="Bachelor" />
+                        <label for="reponse-4">Bachelor</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="choiceGrade" value="Master" />
+                        <label for="reponse-5">Master</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="choiceGrade" value="Post-Master"/>
+                        <label for="reponse-6">Post-Master</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="choiceGrade" value="Doctorate" />
+                        <label for="reponse-7">Doctorate</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="choiceGrade" value="Other" />
+                        <label for="reponse-8">Other</label>
+                    </li>
+
+
+
+                </ul>
+            </fieldset>
+            <input type="submit" id="valider" name="valider" value="Filter" >
+        </form>
+
+
         <?php
         $id = 2;
-        $set = Applicationdb::getAllApplicationWithUserId($id);
+        $choiceGender = null;
+        $choiceGrade = null;
+        if(isset($_POST['valider'])) {
+
+            if(isset($_POST['choiceGender'])){
+                $choiceGender = $_POST['choiceGender'];
+
+            }
+            if(isset($_POST['choiceGrade'])){
+                $choiceGrade = $_POST['choiceGrade'];
+
+
+            }
+
+            $set = Applicationdb::getAllApplicationWithUserIdFilter($id,$choiceGender,$choiceGrade);
+
+        } else {
+
+            $set = Applicationdb::getAllApplicationWithUserId($id);
+        }
+
+
 
         echo "<form class = \"inscription\" action=\"\" method=\"POST\">";
         foreach ($set as $key ){

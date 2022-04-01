@@ -1622,3 +1622,50 @@ A VERTICAL event
 .fc-theme-bootstrap5-shaded {
     background-color: var(--bs-gray-200);
 }
+
+/*
+liste cocher
+ */
+
+label {
+    position: relative;
+    padding: 0 0 0 2rem;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+
+input[type=checkbox] + label::before,
+input[type=checkbox] + label::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+}
+
+input[type=checkbox] + label::before {
+    left: 0.5rem;
+    top: 0.15rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 0.05rem solid black;
+    background: white;
+}
+
+input[type=checkbox]:checked + label::after {
+    left: 0.6rem;
+    top: 0.28rem;
+    height: 0.8rem;
+    border-left: 0.8rem solid black;
+}
+
+input[type=checkbox]:focus + label::before {
+    outline: 0.05rem dotted;
+}
+
+.filter{
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+}
